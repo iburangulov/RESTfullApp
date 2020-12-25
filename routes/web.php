@@ -3,6 +3,9 @@
 use components\Route;
 
 Route::get('/', 'IndexController/home');
+Route::get('/profile', 'IndexController/profile');
+
+
 Route::get('/signin', 'IndexController/signin');
 Route::get('/signup', 'IndexController/signup');
 Route::get('/signout', 'UserController/signout');

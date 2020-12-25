@@ -7,6 +7,6 @@ define('ROOT', $_SERVER['DOCUMENT_ROOT']);
 require_once ROOT . 'config.php';
 
 //(new components\ErrorHandler())->register();
-(new components\Session());
+$session = new components\Session();
 (new components\Router)->run();
 
