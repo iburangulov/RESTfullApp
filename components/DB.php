@@ -12,9 +12,20 @@ class DB
         $db_pass = DB_PASS;
 
         $st = "mysql:host=$db_host; dbname=$db_name";
-        $pdo = new \PDO($st, $db_user, $db_pass);
-        if ($pdo) return $pdo;
-        else return false;
+
+        try {
+            $pdo = new \PDO($st, $db_user, $db_pass);
+            return $pdo;
+        } catch (\Exception $exception)
+        {
+            return false;
+        }
     }
+
+    public static function getByName(string $table, string $field, string $value)
+    {
+        $pdo = self::getPDO();
+    }
+
 
 }

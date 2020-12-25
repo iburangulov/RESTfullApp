@@ -24,4 +24,9 @@ class IndexController
         $title = 'Sign Up';
         require ROOT . 'views/signup.php';
     }
+
+    public function __destruct()
+    {
+        unset($_SESSION['validation_errors']);
+    }
 }

@@ -5,11 +5,9 @@ use components\DB;
 
 class UserModel extends BaseModel
 {
-    private $User;
-
     public function attempt(string $email, string $password)
     {
-
+        $user = DB::getByName($this->table, 'email', $email);
     }
 
 }
