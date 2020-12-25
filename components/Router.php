@@ -40,7 +40,8 @@ class Router
                 $data = explode('/', $roadModified);
                 $controllerName = CONTROLLERS_NAMESPACE . array_shift($data);
                 $actionName = array_shift($data);
-                call_user_func_array([$controllerName, $actionName], $data);
+                $controller = new $controllerName;
+                call_user_func_array([$controller, $actionName], $data);
                 break;
             }
         }

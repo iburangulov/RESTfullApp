@@ -14,6 +14,5 @@ require ROOT . 'views/templates/navbar.php';
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-
 <?php
 require ROOT . 'views/templates/footer.php';

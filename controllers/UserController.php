@@ -1,6 +1,7 @@
 <?php
 namespace controllers;
 
+use components\DB;
 use components\Route;
 use models\UserModel;
 
@@ -15,12 +16,12 @@ class UserController
 
     public function signin()
     {
-        var_dump($_POST);
+        $pdo = DB::getPDO();
     }
 
     public function signup()
     {
-        var_dump($_POST);
+
     }
 
     public function signout()
