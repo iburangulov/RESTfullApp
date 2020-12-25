@@ -1,0 +1,16 @@
+{
+    "name": "insaf/bitrix.loc",
+    "type": "project",
+    "authors": [
+        {
+            "name": "iburangulov",
+            "email": "iburanguloff@ya.ru"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "" : ""
+        }
+    }
+}
