@@ -1,8 +1,5 @@
 <?php
-
-
 namespace controllers;
-
 
 class IndexController
 {
@@ -12,7 +9,7 @@ class IndexController
 
     public function home()
     {
-        echo 'Home';
+
     }
 
     public function page(int $id)
