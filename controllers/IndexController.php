@@ -9,11 +9,19 @@ class IndexController
 
     public function home()
     {
-
+        $title = 'Home';
+        require ROOT . 'views/home.php';
     }
 
-    public function page(int $id)
+    public function signin()
     {
-        echo 'Page ' . $id;
+        $title = 'Sign In';
+        require ROOT . 'views/signin.php';
+    }
+
+    public function signup()
+    {
+        $title = 'Sign Up';
+        require ROOT . 'views/signup.php';
     }
 }
