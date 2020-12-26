@@ -29,7 +29,6 @@ abstract class BaseModel
                 return false;
             }
         } else return false;
-
     }
 
 }

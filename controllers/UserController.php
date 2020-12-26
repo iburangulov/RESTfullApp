@@ -25,7 +25,7 @@ class UserController
             $password => 'required|password'
         ]);
 
-        if (empty($_SESSION['validation_errors'])) {
+        if (!isset($_SESSION['validation_errors'])) {
             if ($this->User->attempt($email, $password)) {
                 Route::redirect('/profile');
             } else {
@@ -45,7 +45,7 @@ class UserController
             $email => 'required|email',
             $password => 'required|password|confirmation',
         ]);
-        if (empty($_SESSION['validation_errors'])) {
+        if (!isset($_SESSION['validation_errors'])) {
             $res = $this->User->create([
                 'name' => $name,
                 'email' => $email,
@@ -58,8 +58,6 @@ class UserController
                 Session::setKey('validation_errors', 'Error, try again');
                 Route::back();
             }
-
-
         } else {
             Session::setKey('validation_errors', 'Check your fields');
             Route::back();

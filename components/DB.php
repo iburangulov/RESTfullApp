@@ -14,7 +14,6 @@ class DB
         $db_pass = DB_PASS;
 
         $st = "mysql:host=$db_host; dbname=$db_name";
-
         try {
             $pdo = new PDO($st, $db_user, $db_pass);
             return $pdo;
