@@ -75,4 +75,9 @@ class Route
         $location = 'Location: /' . $uri;
         header($location);
     }
+
+    public static function back()
+    {
+        self::redirect($_SESSION['prev_page']);
+    }
 }

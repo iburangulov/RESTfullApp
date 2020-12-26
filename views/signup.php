@@ -24,4 +24,5 @@ require ROOT . 'views/templates/navbar.php';
     </form>
 
 <?php
+if (isset($_SESSION['validation_errors'])) echo $_SESSION['validation_errors'];
 require ROOT . 'views/templates/footer.php';
