@@ -56,7 +56,23 @@ class PostsApiController
 
     public function updatePost(int $id)
     {
-        echo 'Put' . $id;
+        $title = $_POST['title'];
+        $subtitle = $_POST['subtitle'];
+        $content = $_POST['content'];
+        Validator::validate([
+            $title => 'title',
+            $subtitle => 'subtitle',
+            $content => 'content',
+        ]);
+        if (!isset($_SESSION['validation_errors'])) {
+            $res = $this->Posts->update($id, [
+                'title' => $_POST['title'],
+                'subtitle' => $_POST['subtitle'],
+                'content' => $_POST['content'],
+            ]);
+            if ($res) return true;
+            else return false;
+        } else return false;
     }
 
     public function deletePost(int $id)

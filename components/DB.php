@@ -35,4 +35,28 @@ class DB
         } else return false;
     }
 
+    public static function updateByName(string $table, int $id, array $data)
+    {
+        $pdo = self::getPDO();
+        $string = '';
+        if ($pdo) {
+            foreach ($data as $key => $value)
+            {
+                $string = $string . $key . ' = \'' . $value . '\'' . ',';
+            }
+            $string = trim($string, ',');
+            $query = "INSERT INTO $table $string WHERE id = '$id'";
+            try {
+                $result = $pdo->query($query);
+                return true;
+            } catch (\Exception $exception)
+            {
+                return false;
+            }
+
+        } else return false;
+    }
+
 }
+
+// UPDATE posts SET title = 'title2', price = 'price2' WHERE id = '$id'

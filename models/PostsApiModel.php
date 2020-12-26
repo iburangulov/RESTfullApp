@@ -18,4 +18,10 @@ class PostsApiModel extends BaseModel
         } else return false;
     }
 
+    public function update(int $id, array $data)
+    {
+        $res = DB::updateByName($this->table, $id, $data);
+        return $res;
+    }
+
 }
