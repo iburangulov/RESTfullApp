@@ -23,12 +23,19 @@ class Validator
         foreach ($validable as $name => $value) {
             $valueList = explode('|', $value);
             foreach ($valueList as $pattern) {
-                if (!preg_match('~' . $patternList[$pattern] . '~', $name))
-                {
+                if ($pattern === 'confirmation') {
+                    if (!isset($_POST['password_confirmation'])) {
+                        $_SESSION['validation_errors'] = 'Password must match';
+                    }
+                    if (($name) !== htmlspecialchars(trim($_POST['password_confirmation']))) {
+                        $_SESSION['validation_errors'] = 'Password must match';
+                    }
+                    continue;
+                }
+                if (!preg_match('~' . $patternList[$pattern] . '~', $name)) {
                     $_SESSION['validation_errors'] = 'Validation error!';
                 }
             }
         }
-        return true;
     }
 }

@@ -1,6 +1,6 @@
 <?php
-require ROOT . 'views/templates/header.php';
-require ROOT . 'views/templates/navbar.php';
+include ROOT . 'views/templates/header.php';
+include ROOT . 'views/templates/navbar.php';
 
 
 ?>
@@ -15,4 +15,4 @@ require ROOT . 'views/templates/navbar.php';
 
 <?php
 
-require ROOT . 'views/templates/footer.php';
+include ROOT . 'views/templates/footer.php';
