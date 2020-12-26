@@ -18,9 +18,9 @@ class Validator
             'name' => '[A-Z]{0,1}[a-z]{2,22}',
             'email' => '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}',
             'password' => '.{4,22}',
-            'title' => '.{5,250}',
-            'subtitle' => '.{5,250}',
-            'content' => '.{5,65000}',
+            'title' => '.+',
+            'subtitle' => '.+',
+            'content' => '.+',
         ];
 
         foreach ($validable as $name => $value) {
